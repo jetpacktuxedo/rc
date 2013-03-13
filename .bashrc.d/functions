@@ -1,7 +1,3 @@
-mdcd() {
-  mkdir -p "$@" && cd "$@"
-}
-
 rmalias() {
   unalias $1 && sed -i "/alias $1\=/d" ~/.bashrc.d/aliases
 }

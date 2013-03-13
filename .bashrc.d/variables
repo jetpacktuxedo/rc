@@ -16,3 +16,5 @@ export SVN_EDITOR="/usr/bin/vim"
 export EDITOR=/usr/bin/vim
 
 force_color_prompt=yes
+
+shopt -s checkwinsize

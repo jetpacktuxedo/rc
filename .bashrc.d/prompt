@@ -1,4 +1,5 @@
-#If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+#export PS1="[\e[1;32m\u@\e[3;31m\h:\e[1;35m\w\e[m]$" #Breaks line wrapping because of escape characters. This is why I hate bash :|
 
-export PS1="[\e[1;32m\u@\e[3;31m\h:\e[1;35m\w\e[m ]$"
+#export PS1="\u@\h:\w]$" #Basic prompt
+
+export PS1="[\[\e[1;32m\]\u@\[\e[3;31m\]\h:\[\e[1;35m\]\w\[\e[m\]]$" #Works! Yay!
