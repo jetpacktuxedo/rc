@@ -1,0 +1,23 @@
+if [ "$SSH_CONNECTION" ]; then  #we're in a ssh connection
+  if [ -z "$STY" ]; then  #Screen is not currently running
+    screen_opts=""
+    screen_list=$(screen -ls | head -n -2 -) #get list of screen sessions
+    if [ `echo -e "$screen_list" | egrep -c "[0-9]+\.([a-zA-Z0-9\-]+)?\.[a-zA-Z]*"` -gt 0 ]; then
+      echo -e "\n$screen_list" | head -n 2 - 
+      screen_list=$(echo -e "$screen_list" | tail -n +2)
+      echo -e "\n$screen_list" | awk 'NR>1 { LINE+=1; printf "\t%d%s\n",LINE,$0; }'
+      echo
+      # prompt, timeout a/f 10s, read only 1 char, default to most recent session
+      read -n 1 -t 10 -p "Pick a # to reconnect to, or N to start new session: "
+      if [[ "n" = "$REPLY" ]]; then
+        screen_opts=""
+      elif [ -z "$REPLY" ]; then
+        screen_opts="-D -r"
+      else
+        REPLY=$(echo -e "$screen_list" | awk -v REPLY=$REPLY 'NR==REPLY { print $1}' )
+        screen_opts="-D -r $REPLY"
+      fi
+    fi
+    exec screen $screen_opts
+  fi
+fi

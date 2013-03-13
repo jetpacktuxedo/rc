@@ -1,0 +1,15 @@
+attrcolor b ".I"
+
+defbce "on"
+
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+# Don't display the copyright page
+startup_message off
+
+# tab-completion flash in heading bar
+vbell off
+
+startup_message off
+
+

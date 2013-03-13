@@ -1,0 +1,21 @@
+alias grepedac='grep "[0-9]" /sys/devices/system/edac/mc/mc*/csrow*/ch*_ce_count ; grep "[0-9]" /sys/devices/system/edac/mc/mc*/ue_cou    nt ; grep "[0-9]" /sys/devices/system/edac/mc/mc*/ce_count'
+alias stressR='cd /tmp; stress --cpu 16 --io 8 --vm 8 --vm-bytes 1000M --hdd 8 --timeout 1d'
+alias stressC='cd /tmp; stress --cpu 6 --io 8 --vm 8 --vm-bytes 1000M --hdd 8 --timeout 1d'
+alias cfagent='sudo /var/cfengine/bin/cfagent -qvK'
+alias edac='sudo cat /var/log/messages | grep EDAC'
+alias krypton='ssh -C krypton'
+
+alias minecraft='java -jar ~/minecraft.jar'
+alias bashrc='vim .bashrc'
+
+alias ls='ls -a -hF --color'
+
+#  easier back navigation
+alias cd..='cd ..'
+alias .='cd ../'
+alias ..='cd ../../'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+
+# added 2013-03-13 15:56:40
+alias loop='echo "for i in {start..end}; do (stuff goes here); done"'

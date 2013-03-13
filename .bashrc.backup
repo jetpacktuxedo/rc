@@ -1,0 +1,19 @@
+export PATH=$PATH:/usr/site/rcac/scripts
+export PS1="\e[1;32m[\u@\h:\w]\$\e[m"
+export SVN_EDITOR="/usr/bin/vim"
+alias grepedac='grep "[0-9]" /sys/devices/system/edac/mc/mc*/csrow*/ch*_ce_count ; grep "[0-9]" /sys/devices/system/edac/mc/mc*/ue_count ; grep "[0-9]" /sys/devices/system/edac/mc/mc*/ce_count'
+alias stressR='cd /tmp; stress --cpu 16 --io 8 --vm 8 --vm-bytes 1000M --hdd 8 --timeout 1d'
+alias stressC='cd /tmp; stress --cpu 6 --io 8 --vm 8 --vm-bytes 1000M --hdd 8 --timeout 1d'
+alias cfagent='sudo /var/cfengine/bin/cfagent -qvK'
+alias edac='sudo cat /var/log/messages | grep EDAC'
+alias minecraft='java -jar ~/minecraft.jar'
+alias ls='ls -a -hF --color'
+alias krypton='ssh -C krypton'
+alias bashrc='vim .bashrc'
+
+#  easier back navigation
+alias cd..='cd ..'
+alias .='cd ../'
+alias ..='cd ../../'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
