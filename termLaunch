@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Variables
+count=$(ps -e|grep "terminal"|grep -v "grep" | wc -l)
+let "mod = $count % 4"
+
+if [ $mod == 0 ]
+  then
+  # Top Right
+  terminal --geometry=99x28+1027+21 --disable-server&
+fi
+
+if [ $mod == 1 ]
+  then
+  # Bottom Right
+  terminal --geometry=99x27+1027+560 --disable-server&
+fi
+
+if [ $mod == 2 ]
+  then
+  # Top Left
+  terminal --geometry=84x28+260+21 --disable-server&
+fi
+
+if [ $mod == 3 ]
+  then
+  # Bottom Left
+  terminal --geometry=84x27+260+560 --disable-server&
+fi
