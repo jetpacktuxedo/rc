@@ -22,4 +22,4 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 
-colorscheme Tomorrow-Night
+colorscheme Tomorrow-Night-Bright
